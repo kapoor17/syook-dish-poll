@@ -1,0 +1,23 @@
+.food-list{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.food-items{
+    flex: 0 1 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.food-item.clicked{
+    border: 3px solid blue;
+}
