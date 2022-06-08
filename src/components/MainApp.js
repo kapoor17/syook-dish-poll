@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import FoodItems from './FoodItems';
+import "../food.css"
 
 function MainApp(props) {
 
@@ -14,9 +15,10 @@ function MainApp(props) {
     },[])
 
     useEffect(function(){
+        const root = document.querySelector(":root")
         rated.splice(-4,rated.length-3)
         if(rated.length === 3){
-            setTrigger(true)
+            setTrigger(true)          
         }
     }, [rated.length])
 
@@ -30,10 +32,15 @@ function MainApp(props) {
                 }
             ]);
         }
+        else
+            rated.pop()
     }
 
+    console.log(rated)
     
     const selection = (
+        <>
+        <h1>Please Select your top 3 Dishes</h1>
         <div className='food-list'>
             {foodData.map(food=> <FoodItems key={food.id} 
                                             id={food.id} 
@@ -43,18 +50,23 @@ function MainApp(props) {
                                             selection = {true}
                                             handleClick={handleClick}/>)}
         </div>
+        </>
     )
 
     const final = (
-        <div className='done'>
-            <h1>Your Final Food selections are</h1>
-            {rated.map(food=> <FoodItems key={food.id} 
+        <>
+        <h1>Your Final Food selections are</h1>
+        <div className='food-list'>
+            {rated.map((food,index)=> <FoodItems key={food.id} 
                                             id={food.id} 
                                             description={food.description} 
                                             dishName={food.dishName} 
                                             image={food.image} 
+                                            done={true}
+                                            index={index}
                                             handleClick={handleClick}/>)}
         </div>
+        </>
     )
 
     return (

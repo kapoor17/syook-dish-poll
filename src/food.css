@@ -1,23 +1,47 @@
+
+    
+
 .food-list{
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 1em;
-}
+    gap: 2em;
 
+    margin-top: 2em;
+
+}
+img{
+    max-width: 100%;
+}
 .food-items{
-    flex: 0 1 350px;
+    flex: 0 1 300px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    cursor: pointer;
-    pointer-events: all;
+    align-items: flex-start;
 }
 
-.food-item.clicked{
-    border: 3px solid blue;
+.food-image{
+    border-radius: 5px;
+    width: 100%;
+    margin: 1em 0em;
+}
+
+.selection{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+input[type="checkbox"]{
+    transform: scale(2);
+}
+
+.food-description{
+    text-align: justify;
+    max-width: 100%;
 }
