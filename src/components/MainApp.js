@@ -15,7 +15,6 @@ function MainApp(props) {
     },[])
 
     useEffect(function(){
-        const root = document.querySelector(":root")
         rated.splice(-4,rated.length-3)
         if(rated.length === 3){
             setTrigger(true)          
